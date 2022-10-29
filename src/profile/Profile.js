@@ -2,7 +2,7 @@ import React from "react";
 import { PropTypes } from "prop-types"; // ES6
 
 const Profile = ({ fullName, bio, profession, children, handleName }) => {
-  const HandleName = {handleName};
+  
   return (
     <div>
       <h1>{fullName}</h1>
@@ -12,10 +12,13 @@ const Profile = ({ fullName, bio, profession, children, handleName }) => {
       {children}
       {handleName}
       
-      <button onClick={() => HandleName(alert(`&{fullName}`))}>clic here</button>
+      <button onClick={()=> handleName(fullName,bio,profession)}>clic here</button>
+      
     </div>
   );
 };
+
+
 
 Profile.propTypes = {
   fullName: PropTypes.string,
